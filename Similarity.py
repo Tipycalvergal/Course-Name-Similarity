@@ -1,3 +1,4 @@
+import streamlit as st
 import re
 import pandas as pd
 import numpy as np
@@ -7,7 +8,10 @@ from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import pprint
+import math
+import random
 zh = spacy.load("zh_core_web_sm")
+st.title('Hi!')
 
 
 file_path = '/Users/r.a.n.d.y.w./Downloads/course-list.csv'
@@ -43,4 +47,5 @@ sorted_similarity_df = similarity_df.apply(lambda row: row.sort_values(ascending
 
 # Display the similarity matrix
 pprint.pprint(sorted_similarity_df)
+st.dataframe(sorted_similarity_df)
 
